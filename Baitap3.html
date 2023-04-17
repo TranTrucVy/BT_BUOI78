@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>ĐỔI TIỀN TỆ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 style="text-align: center;">BÀI TẬP 3</h1>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+                ĐỔI TIỀN TỆ
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">Nhập số tiền cần chuyển đổi</label>
+                    <input type="text" name="" id="soTienCanChuyenDoi" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                  <label for="">1 USD = 23,000 VNĐ</label>
+                </div>
+                    <button id="btnCalculate" class="btn btn-success">Chuyển đổi</button>
+                    <hr>
+                    <div id="hienThiChuyenDoi" class="card-footer text-muted"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <script>
+      function getEle(id){
+        return document.getElementById(id);
+    }
+    function calculateTien(){
+      /*
+          Mô hình 3 khối:
+          Input: tiền ở đơn vị USD
+          Qúa trình xử lý:
+          - Đặt biến để gán dữ liệu của tiền cần chuyển đổi
+          - Dùng 1 biến để tính chuyển đổi = giaTriDaChuyenDoi * 23500
+          - Dùng innerHTML để lấy dữ liệu đã tính vào trong thẻ div đã có sẵn
+          Output: tiền ở đơn vị VNĐ
+      */
+        var soTienCanChuyenDoi = parseInt(getEle("soTienCanChuyenDoi").value);
+        var giaTriDaChuyenDoi = soTienCanChuyenDoi*23500;
+        var curFormat = new Intl.NumberFormat("vn-VN");
+    
+        getEle("hienThiChuyenDoi").innerHTML = "Số tiền chuyển đổi: " + curFormat.format(giaTriDaChuyenDoi) +" VNĐ";
+    }
+    
+    getEle("btnCalculate").onclick = function(){
+        calculateTien();
+    }
+    
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

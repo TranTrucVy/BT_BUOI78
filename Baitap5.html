@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>TÍNH TỔNG CÁC KÝ SỐ TRONG 1 SỐ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 style="text-align: center;">BÀI TẬP 5</h1>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+                TÍNH TỔNG CÁC KÝ SỐ TRONG 1 SỐ
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">Nhập vào một số</label>
+                    <input type="text" name="" id="number1" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                </div>
+                    <button id="btnCalculate" class="btn btn-success">Tính tổng các ký số</button>
+                    <hr>
+                    <div id="tinhTong" class="card-footer text-muted"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        function getEle(id){
+            return document.getElementById(id);
+        }
+        function calculateTong(){
+          /*
+          Mô hình 3 khối:
+          Input: 1 số có 2 chữ số
+          Qúa trình xử lý:
+          - Đặt 1 biến để lấy ra giá trị đã nhập vào
+          - Dùng 2 biến để tính giá trị hàng chục và hàng trăm
+          - Dùng innerHTML để thêm "tổng" 2 giá trị vào thẻ div thông qua id
+          Output: hiển thị tổng các ký số của 2 số này
+          */
+            var number1 = parseInt(getEle("number1").value);
+            var soHangChuc  = parseInt(number1 / 10);
+            var soHangDonVi = parseInt(number1 % 10);
+            getEle("tinhTong").innerHTML = "Tổng các ký số là: " + (soHangChuc+soHangDonVi);
+        }
+        getEle("btnCalculate").onclick = function(){
+            calculateTong();
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
