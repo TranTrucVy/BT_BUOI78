@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BÀI TẬP JS BUỔI 7-8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 style="text-align: center; padding-top: 20px;">BÀI TẬP JS BUỔI 7-8</h1>
+    <section class="project container py-1 my-5">
+        <form>
+            <div class="form-row form-group">
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="nhapN" placeholder="Nhập vào số n">
+                </div>
+                <div class="col-lg-4">
+                    <button id="btnAddNumber" type="button" class="btn btn-success">Thêm số</button>
+                </div>
+            </div>
+        </form>
+        <div class="alert alert-info my-3">
+            <span>Các số đã thêm: </span><span id="kqAddNumber"></span>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#bai1_tinhtong" aria-expanded="true" aria-controls="collapseOne">
+                    Bài 1: Tính tổng các số dương trong mảng
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="bai1_tinhtong" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="col-6 py-2 my-2">
+                    <button id="btnTinhTong" type="button" class="btn btn-success">Kết quả</button>
+                    <div class="alert alert-info my-3">
+                        <span>Tổng các số dương là: </span><span id="kqTinhTong"></span>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai2_demsoduong" aria-expanded="false" aria-controls="collapseTwo">
+                   Bài 2: Đếm có bao nhiêu số dương trong mảng
+                  </button>
+                </h2>
+              </div>
+              <div id="bai2_demsoduong" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="col-6 py-2 my-2">
+                    <button id="btnSoDuong" type="button" class="btn btn-success">Kết quả</button>
+                    <div class="alert alert-info my-3">
+                        <span>Có </span><span id="kqSoDuong"></span><span> số dương trong mảng</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai3_timsonhonhat" aria-expanded="false" aria-controls="collapseThree">
+                   Bài 3: Tìm số nhỏ nhất trong mảng
+                  </button>
+                </h2>
+              </div>
+              <div id="bai3_timsonhonhat" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="col-6 py-2 my-2">
+                    <button id="btnSoNhoNhat" type="button" class="btn btn-success">Kết quả</button>
+                    <div class="alert alert-info my-3">
+                        <span>Số nhỏ nhất trong mảng là: </span><span id="kqSoNhoNhat"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai4_timSoDuongNho" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 4: Tìm số dương nhỏ nhất trong mảng.
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai4_timSoDuongNho" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <button id="btnSoDuongNhoNhat" type="button" class="btn btn-success">Kết quả</button>
+                      <div class="alert alert-info my-3">
+                          <span>Số dương nhỏ nhất là: </span><span id="kqSoDuongNhoNhat"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai5_sochancuoicung" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 5: Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai5_sochancuoicung" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <button id="btnSoChanCuoiCung" type="button" class="btn btn-success">Kết quả</button>
+                      <div class="alert alert-info my-3">
+                          <span>Số chẵn cuối cùng trong mảng là: </span><span id="kqSoChanCuoiCung"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai6_doicho" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 6: Đổi chỗ 2 giá trị trong mảng theo vị trí
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai6_doicho" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <form>
+                      <div id="bai6_doichoinput" class="form-row form-group">
+                        <div class="col-lg-4">
+                        <input type="text" class="form-control" id="viTri1" placeholder="Nhập vị trí của số 1">
+                        </div>
+                        <div class="col-lg-4">
+                        <input type="text" class="form-control" id="viTri2" placeholder="Nhập vị trí của số 2">
+                        </div>
+                        <button id="btnDoiCho" type="button" class="btn btn-success">Đổi chỗ</button>
+                      </div>
+                    </form>
+                    <div class="alert alert-info my-3">
+                      <span>Mảng sau khi đã đổi là: </span><span id="kqDoiCho"></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai7_SapXepTangDan" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 7: Sắp xếp mảng theo thứ tự tăng dần
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai7_SapXepTangDan" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <button id="btnSapXepTangDan" type="button" class="btn btn-success">Kết quả</button>
+                      <div class="alert alert-info my-3">
+                          <span>Kết quả sắp xếp tăng dần của mảng: </span><span id="kqSapXepTangDan"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai8_timSoNguyenTo" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 8: Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về –1
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai8_timSoNguyenTo" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <button id="btnSoNguyenTo" type="button" class="btn btn-success">Tìm số nguyên tố</button>
+                      <div class="alert alert-info my-3">
+                          <span>Số nguyên tố đầu tiên trong mảng là: </span><span id="kqSoNguyenTo"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingNine">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai9" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 9: Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai9" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <div id="inpBai9" class="form-row form-group">
+                        <div class="col-lg-4">
+                        <input type="text" class="form-control" id="themSoThuc" placeholder="Nhập số">
+                        </div>
+                        <button id="btnThemSoThuc" type="button" class="btn btn-success">Thêm số</button>
+                      </div>
+                      <div class="alert alert-info my-3">
+                        <span>Mảng đã thêm là: </span><span id="kqThemSoThuc"></span>
+                    </div>
+                    </form>
+                      <button id="btnDemSoNguyen" type="button" class="btn btn-success">Đếm số nguyên trong mảng</button>
+                      <div class="alert alert-info my-3">
+                          <span>Có </span><span id="kqDemSoNguyen"></span><span> số nguyên trong mảng </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTen">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#bai10_sosanh" aria-expanded="false" aria-controls="collapseThree">
+                    Bài 10: So sánh số lượng số dương và số lượng số âm trong mảng
+                    </button>
+                  </h2>
+                </div>
+                <div id="bai10_sosanh" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="col-6 py-2 my-2">
+                      <button id="btnSoSanh" type="button" class="btn btn-success">So sánh</button>
+                      <div class="alert alert-info my-3">
+                          <span></span><span id="kqSoSanh"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
